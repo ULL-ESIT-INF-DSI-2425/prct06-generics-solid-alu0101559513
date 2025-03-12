@@ -4,17 +4,7 @@ interface busquedaYear<T> {
 interface busquedaNombre<T> {
   busquedaNombre(nombre:string): T[];
 }
-interface Documental {
-  nombre: string;
-  year: string;
-}
-
-interface Serie {
-  nombre: string;
-  year: string;
-}
-
-interface Pelicula {
+interface ElementoBase {
   nombre: string;
   year: string;
 }
@@ -27,39 +17,39 @@ abstract class basicStremeableCollection<T> implements Stremeable<T> {
   abstract busquedaNombre(nombre:string): T[];
   abstract  busquedaYear(year:string): T[];
 }
-export class Documentales extends basicStremeableCollection<Documental> {
-  constructor(public collection: Documental[]) {
+export class Documentales<T extends ElementoBase> extends basicStremeableCollection<T> {
+  constructor(public collection: T[]) {
     super(collection);
   }
-  busquedaNombre(nombre: string): Documental[] {
-    return this.collection.filter(item => item.nombre.toLowerCase().includes(nombre.trim().toLowerCase()));
+  busquedaNombre(nombreBuscar: string): T[] {
+    return this.collection.filter(item => item.nombre.toLowerCase().includes(nombreBuscar.trim().toLowerCase()));
   }
 
-  busquedaYear(year: string): Documental[] {
+  busquedaYear(year: string): T[] {
     return this.collection.filter(item => item.year === year);
   }
 }
-export class Series extends basicStremeableCollection<Serie> {
-  constructor(public collection: Serie[]) {
+export class Series<T extends ElementoBase> extends basicStremeableCollection<T> {
+  constructor(public collection: T[]) {
     super(collection);
   }
-  busquedaNombre(nombre: string): Serie[] {
+  busquedaNombre(nombre: string): T[] {
     return this.collection.filter(item => item.nombre.toLowerCase().includes(nombre.trim().toLowerCase()));
   }
 
-  busquedaYear(year: string): Serie[] {
+  busquedaYear(year: string): T[] {
     return this.collection.filter(item => item.year === year);
   }
 }
-export class Peliculas extends basicStremeableCollection<Pelicula> {
-  constructor(public collection: Pelicula[]) {
+export class Peliculas<T extends ElementoBase> extends basicStremeableCollection<T> {
+  constructor(public collection: T[]) {
     super(collection);
   }
-  busquedaNombre(nombre: string): Pelicula[] {
+  busquedaNombre(nombre: string): T[] {
     return this.collection.filter(item => item.nombre.toLowerCase().includes(nombre.trim().toLowerCase()));
   }
 
-  busquedaYear(year: string): Pelicula[] {
+  busquedaYear(year: string): T[] {
     return this.collection.filter(item => item.year === year);
   }
 }
