@@ -20,11 +20,11 @@ describe('Ejercicio Collection', () => {
   test('Obtener elemento numerico', () => {
     expect(mycollectionNumeric.getItem(0)).toEqual(4);
   });
-  /*test('Eliminar elemento numerico', () => {
+  test('Eliminar elemento numerico', () => {
     mycollectionNumeric.addItem(5);
     mycollectionNumeric.removeItem(1);
-    expect(mycollectionNumeric.print()).toBe("5");
-  });*/
+    expect(mycollectionNumeric.print()).toBe("4,");
+  });
   test('Imprime la colleción', () => {
     mycollectionNumeric.addItem(3);
     expect(mycollectionNumeric.print()).toBe("4,3");
@@ -36,11 +36,11 @@ describe('Ejercicio Collection', () => {
   test('Obtener elemento string', () => {
     expect(mycollectionString.getItem(0)).toEqual("4");
   });
-  /*test('Eliminar elemento string', () => {
-    mycollectionString.addItem(5);
+  test('Eliminar elemento string', () => {
+    mycollectionString.addItem("5");
     mycollectionString.removeItem(1);
-    expect(mycollectionString.print()).toBe("5");
-  });*/
+    expect(mycollectionString.print()).toBe("4,");
+  });
   test('Obtener tamaño de la colleción', () => {
     expect(mycollectionString.getNumberOfItems()).toBe(1);
   });

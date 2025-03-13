@@ -30,7 +30,7 @@ export abstract class PrintableCollection<T> implements Printable, Collectable<T
    * @param item - elemento a eliminar
    */
   removeItem(index: number): void {
-    this.collection = this.collection.slice(index);
+    this.collection.splice(index,1);
   };
   /**
    * obtener numero de elementos de la colección
