@@ -1,4 +1,4 @@
-import { Cancion } from "./canciones";
+import { Cancion } from "./canciones.js";
 export type Disco = [string, number, Cancion[]];
 export type Single = [string, number, Cancion[]];
 export class Discografia<T extends Disco | Single> {

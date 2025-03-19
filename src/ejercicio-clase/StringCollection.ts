@@ -1,4 +1,4 @@
-import { PrintableCollection } from "./PrintableCollection";
+import { PrintableCollection } from "./PrintableCollection.js";
 export class StringCollection extends PrintableCollection<string> {
  constructor(private stringcollection: string[]) {
   super(stringcollection);

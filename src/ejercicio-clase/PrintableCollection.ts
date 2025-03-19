@@ -1,5 +1,5 @@
-import { Printable } from "./Printable";
-import { Collectable } from "./Collectable";
+import { Printable } from "./Printable.js";
+import { Collectable } from "./Collectable.js";
 /**
  * Clase abstracta PrintableCollection
  */

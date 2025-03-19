@@ -1,4 +1,4 @@
-import { PrintableCollection } from "./PrintableCollection";
+import { PrintableCollection } from "./PrintableCollection.js";
 export class NumericCollection extends PrintableCollection<number> {
   /**
    * constructor

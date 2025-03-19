@@ -1,4 +1,4 @@
-import { Discografia, Disco, Single } from "./discografia";
+import { Discografia, Disco, Single } from "./discografia.js";
 export class Artista<T extends Disco | Single>  {
   private _nombre: string;
   private _oyentes: number;

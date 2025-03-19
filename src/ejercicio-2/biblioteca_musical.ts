@@ -1,6 +1,6 @@
-import { Artista } from "./artista";
-import { Cancion } from "./canciones";
-import { Disco, Single} from "./discografia";
+import { Artista } from "./artista.js";
+import { Cancion } from "./canciones.js";
+import { Disco, Single} from "./discografia.js";
 export class BibliotecaMusical<T extends Disco | Single> {
   private _artistas: Artista<T>[];
   constructor(artistas: Artista<T>[]) {
